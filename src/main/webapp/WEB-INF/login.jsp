@@ -15,9 +15,9 @@ if(request.getMethod().equalsIgnoreCase("post")){
     String username = request.getParameter("username");
     String password = request.getParameter("password");
     if(username.equals("TheDude") && password.equals("Yup123!!")){
-        response.sendRedirect("/profile.jsp");
+        response.sendRedirect("/WEB-INF/profile.jsp");
     }else{
-        response.sendRedirect("/login.jsp");
+        response.sendRedirect("/WEB-INF/login.jsp");
     }
 }
 
