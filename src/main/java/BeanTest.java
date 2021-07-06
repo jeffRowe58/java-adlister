@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class BeanTest {
 
@@ -32,7 +31,7 @@ public class BeanTest {
         quotes.add(quote5);
 
         for (Quote quote : quotes) {
-            System.out.println("\"" + quote.getContent() +"\"\n" + "~" + quote.getAuthor().getFirst_name() + " " + quote.getAuthor().getLast_name());
+            System.out.println("\"" + quote.getContent() +"\"\n" + "~" + quote.getAuthor().getFirstName() + " " + quote.getAuthor().getLastName());
         }
     }
 }

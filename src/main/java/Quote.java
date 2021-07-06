@@ -5,22 +5,22 @@ public class Quote implements Serializable {
     private String content;
     private Author author;
 
-    public Quote(){
+    public Quote() {
 
     }
 
-    public Quote(long id, String content, Author author){
+    public Quote(long id, String content, Author author) {
         this.id = id;
         this.content = content;
         this.author = author;
     }
 
-    public Quote(String content, Author author){
+    public Quote(String content, Author author) {
         this.content = content;
         this.author = author;
     }
 
-    public long getId(int i) {
+    public long getId() {
         return id;
     }
 
