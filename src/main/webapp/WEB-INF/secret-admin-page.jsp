@@ -12,5 +12,7 @@
 </head>
 <body>
 
+<h3>Welcome ${sessionScope.isAdmin}!</h3>
+
 </body>
 </html>

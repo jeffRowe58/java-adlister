@@ -10,13 +10,13 @@ import java.io.IOException;
 public class ShowAdminPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/secret-admin-page.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/secret-admin-page.jsp").forward(req, resp);
         HttpSession session = req.getSession();
 
-        if((boolean) session.getAttribute("/secret-admin-page.jsp") == false){
+        if((boolean) session.getAttribute("/WEB-INF/secret-admin-page.jsp") == false){
             resp.sendRedirect("/login");
             return;
         }
-        req.getRequestDispatcher("/secret-admin-page.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/secret-admin-page.jsp").forward(req, resp);
     }
 }
