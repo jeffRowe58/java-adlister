@@ -8,4 +8,5 @@ CREATE TABLE IF NOT EXISTS ads(
     description TEXT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users (id)
+                              ON DELETE CASCADE
     );

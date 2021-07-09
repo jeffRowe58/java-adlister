@@ -11,7 +11,6 @@ public class MySQLAdsDao implements Ads {
     public MySQLAdsDao(Config config){
         try {
             DriverManager.registerDriver(new Driver());
-
             connection = DriverManager.getConnection(
                     config.getUrl(),
                     config.getUser(),
@@ -19,7 +18,6 @@ public class MySQLAdsDao implements Ads {
         }catch(SQLException sqlException){
             sqlException.printStackTrace();
         }
-
     }
 
     @Override
@@ -30,13 +28,14 @@ public class MySQLAdsDao implements Ads {
             ResultSet rs = stmt.executeQuery("SELECT * FROM ads");
             while (rs.next()) {
                 adsList.add(new Ad(
-                        rs.getInt("user_id"),
+                        rs.getLong("id"),
+                        rs.getLong("user_id"),
                         rs.getString("title"),
                         rs.getString("description")
                 ));
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
         }
         return adsList;
     }
